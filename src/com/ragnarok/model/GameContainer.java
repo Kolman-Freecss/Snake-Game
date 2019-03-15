@@ -1,4 +1,4 @@
-package com.ragnarok.controller;
+package com.ragnarok.model;
 
 import java.awt.Graphics;
 
@@ -18,6 +18,9 @@ public abstract class GameContainer extends JPanel{
 		this.minGameSpeed = minGameSpeed;
 	}
 	
+	public GameContainer() {
+	}
+
 	public int getWindowHeight()
 	{
 		return (int) this.getSize().getHeight();
