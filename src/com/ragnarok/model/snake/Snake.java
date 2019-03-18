@@ -1,5 +1,6 @@
 package com.ragnarok.model.snake;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +34,23 @@ public class Snake implements Drawable{
 	{
 		this.first = new SnakePart(initialPosition, null);
 		this.last = new SnakePart(initialPosition[Positions.X.getPosition()], initialPosition[Positions.Y.getPosition()] + this.first.getSize(), this.first);
-		this.body = new ArrayList();
+		this.body = new ArrayList<>();
 		this.speed = 30;
-		this.direction[];
+		this.direction = new int[2];
+		this.direction[0] = 0;
+		this.direction[1] = -1;
 	}
 
 	
 	
 	@Override
 	public void draw(Graphics g) {
-		
+		g.setColor(Color.WHITE);
+		//Get the relative rectangle with the position X and Y and fill it with the respective color that we defined above.
+		for(SnakePart part : this.body)
+		{
+			g.fillRect(part.getPositionX(), part.getPositionY(), part.getSize(), part.getSize());
+		}
 	}
 	
 	public SnakePart getFirst() {
