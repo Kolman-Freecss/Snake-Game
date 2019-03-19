@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-public abstract class GameContainer extends JPanel{
+public abstract class GameContainer extends JPanel {
 
 	private static final long serialVersionUID = -4568841046563810604L;
 	
@@ -33,7 +33,7 @@ public abstract class GameContainer extends JPanel{
 	
 	public void setWindowWidth(int width)
 	{
-		this.setSize(this.getWindowWidth(), width);
+		this.setSize(width, getWindowHeight());
 	}
 
 	public void setWindowHeight(int height) 
@@ -62,6 +62,6 @@ public abstract class GameContainer extends JPanel{
 	}
 	
 	@Override
-	public abstract void paintComponents(Graphics g);
+	public abstract void paintComponent(Graphics g);
 
 }
